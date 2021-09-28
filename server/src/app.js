@@ -28,9 +28,10 @@ io.on("connection", (socket) => {
   });
 });
 
-router.get("/", (ctx) => {
+router.get("/api/home", (ctx) => {
   console.log("get: /");
-  ctx.body = "hello";
+  console.log(ctx.header);
+  ctx.body = "home";
 });
 
 app.use(cors({ origin: "*" }));
