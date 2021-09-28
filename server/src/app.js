@@ -28,9 +28,12 @@ io.on("connection", (socket) => {
   });
 });
 
-router.get("/", (ctx) => (ctx.body = "hello"));
+router.get("/", (ctx) => {
+  console.log("get: /");
+  ctx.body = "hello";
+});
 
-app.use(cors());
+app.use(cors({ origin: "*" }));
 app.use(router.routes());
 
 module.exports = server;
