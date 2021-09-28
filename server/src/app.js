@@ -16,8 +16,10 @@ const io = socketio(server, {
 });
 
 io.on("connection", (socket) => {
+  console.log("client connected : )");
+
   socket.on("send", (data) => {
-    console.log(`i recieved data from client: ${data}`);
+    console.log(`server recieved data from client: ${data}`);
     socket.emit("send", "data from server : )");
   });
 
