@@ -17,11 +17,11 @@ const io = socketio(server, {
 
 io.on("connection", (socket) => {
   socket.on("send", (data) => {
-    console.log("i recieved data");
+    console.log(`i recieved data from client: ${data}`);
     socket.emit("send", "data from server : )");
   });
 
-  socket.on("disconnect", (data) => {
+  socket.on("disconnect", () => {
     console.log("client socket disconnected");
   });
 });
