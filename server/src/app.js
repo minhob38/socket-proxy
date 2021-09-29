@@ -20,7 +20,7 @@ io.of("/api").on("connection", (socket) => {
 
   socket.on("send", (data) => {
     console.log(`server recieved data from client: ${data}`);
-    socket.emit("send", "data from server : )");
+    socket.emit("send", `data from server : ), your socket id is ${socket.id}`);
   });
 
   socket.on("disconnect", () => {
