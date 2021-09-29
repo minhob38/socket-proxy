@@ -26,15 +26,12 @@ sudo docker run -d -p 3001:3001 --name server-a nodejs-server:latest
 ## Nginx
 ### Nginx Webserver Image Pull / Contaienr Run
 ```sh
-docker pull nginx:latest &&
-docker run -d -p 8080:80 -v ~/src/client/build:/etc/nginx/statics --name webserver nginx:latest &&
+sudo docker pull nginx:latest &&
+sudo docker run -d -p 8080:80 -v ~/src/client/build:/etc/nginx/statics --name webserver nginx:latest &&
 ```
 
 ## Nginx Reload
 ```sh
 sudo docker cp ~/config/nginx.conf webserver:/etc/nginx &&
-sudo docker exec -it webserver /bin/sh
+sudodocker exec -it webserver /bin/sh
 ```
-
-
-
