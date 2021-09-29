@@ -15,7 +15,7 @@ const io = socketio(server, {
   },
 });
 
-io.on("connection", (socket) => {
+io.of("/api").on("connection", (socket) => {
   console.log("client connected : )");
 
   socket.on("send", (data) => {
