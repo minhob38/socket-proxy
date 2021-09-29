@@ -11,7 +11,7 @@ function App() {
         onClick={() => {
           if (socket) socket.disconnect();
 
-          const client = socketio("http://localhost:3001");
+          const client = socketio("http://localhost:3001/api");
           setSocket(client);
           client.on("send", () => console.log("confirmed server received client's data"));
         }}
