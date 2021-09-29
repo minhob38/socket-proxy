@@ -24,14 +24,20 @@ io.of("/api").on("connection", (socket) => {
   });
 
   socket.on("disconnect", () => {
-    console.log("client socket disconnected");
+    console.log("client socket disconnected : (");
   });
 });
 
 router.get("/api/home", (ctx) => {
-  console.log("get: /");
+  console.log("get: /api/home");
   console.log(ctx.header);
   ctx.body = "home";
+});
+
+router.get("/api/nav", (ctx) => {
+  console.log("get: /api/nav");
+  console.log(ctx.header);
+  ctx.body = "nav";
 });
 
 app.use(cors({ origin: "*" }));
