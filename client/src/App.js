@@ -47,7 +47,13 @@ function App() {
       </div>
       <button
         onClick={async () => {
-          const response = await fetch(`${serverAddr}${reqAddr}`);
+          const response = await fetch(`${serverAddr}${reqAddr}`, {
+            method: "GET",
+            headers: {
+              Authorization: "hello ^_^",
+            },
+          });
+
           const _response = await response;
           console.log(_response);
         }}
