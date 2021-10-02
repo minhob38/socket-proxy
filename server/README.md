@@ -33,5 +33,5 @@ sudo docker run -d -p 8080:80 -v ~/src/client/build:/etc/nginx/statics --name we
 ## Nginx Reload
 ```sh
 sudo docker cp ~/config/nginx.conf webserver:/etc/nginx &&
-sudodocker exec -it webserver /bin/sh
+sudo docker exec -it webserver /bin/sh
 ```
