@@ -22,7 +22,7 @@ function App() {
           onClick={() => {
             if (socket) socket.disconnect();
 
-            const client = socketio(`${serverAddr}/api`);
+            const client = socketio(`${serverAddr}/api`, { transports: ["websocket"] });
             setSocket(client);
             client.on("send", (data) => {
               console.log(data);
@@ -50,7 +50,9 @@ function App() {
           const response = await fetch(`${serverAddr}${reqAddr}`, {
             method: "GET",
             headers: {
+              "a-b": "hehe ^_^a",
               "Proxy-Authorization": "hello ^_^",
+              Authrization: "hello ^_^",
             },
           });
 
