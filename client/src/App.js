@@ -50,7 +50,7 @@ function App() {
           const response = await fetch(`${serverAddr}${reqAddr}`, {
             method: "GET",
             headers: {
-              Authorization: "hello ^_^",
+              "Proxy-Authorization": "hello ^_^",
             },
           });
 
