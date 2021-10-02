@@ -13,6 +13,7 @@ const io = socketio(server, {
     origin: "*",
     methods: ["GET", "POST"],
   },
+  transport: ["polling"],
 });
 
 io.of("/api").on("connection", (socket) => {
@@ -31,6 +32,7 @@ io.of("/api").on("connection", (socket) => {
 router.get("/api/home", (ctx) => {
   console.log("get: /api/home");
   console.log(ctx.header);
+  console.log(ctx.headers);
   ctx.body = "home";
 });
 
